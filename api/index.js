@@ -1269,9 +1269,14 @@ var deleteMedia = catchAsync(async (req, res, next) => {
 var import_multer = __toESM(require("multer"));
 var import_path = __toESM(require("path"));
 var import_fs2 = __toESM(require("fs"));
-var uploadDir = import_path.default.join(process.cwd(), "uploads");
-if (!import_fs2.default.existsSync(uploadDir)) {
-  import_fs2.default.mkdirSync(uploadDir, { recursive: true });
+var import_os = __toESM(require("os"));
+var uploadDir = process.env.VERCEL || process.env.NODE_ENV === "production" ? import_path.default.join(import_os.default.tmpdir(), "uploads") : import_path.default.join(process.cwd(), "uploads");
+try {
+  if (!import_fs2.default.existsSync(uploadDir)) {
+    import_fs2.default.mkdirSync(uploadDir, { recursive: true });
+  }
+} catch (err) {
+  console.warn("[Upload Directory Warning]", err.message);
 }
 var storage = import_multer.default.diskStorage({
   destination: (_req, _file, cb) => {

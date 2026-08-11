@@ -1,15 +1,24 @@
 import { Request, Response } from 'express';
 import { Setting } from '../models/Setting';
 import { catchAsync } from '../utils/catchAsync';
+import { DEFAULT_SETTINGS } from '../utils/defaultData';
 
 export const getPublicSettings = catchAsync(async (_req: Request, res: Response) => {
-  let settings = await Setting.findOne();
-  if (!settings) {
-    settings = await Setting.create({});
+  try {
+    let settings = await Setting.findOne();
+    if (settings) {
+      return res.status(200).json({
+        status: 'success',
+        data: { settings },
+      });
+    }
+  } catch (error) {
+    console.warn('[Settings Controller] DB fetch failed, serving default settings:', (error as Error).message);
   }
+
   res.status(200).json({
     status: 'success',
-    data: { settings },
+    data: { settings: DEFAULT_SETTINGS },
   });
 });
 

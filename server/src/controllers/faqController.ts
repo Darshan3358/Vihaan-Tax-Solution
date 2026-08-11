@@ -2,27 +2,52 @@ import { Request, Response, NextFunction } from 'express';
 import { FAQ } from '../models/FAQ';
 import { AppError } from '../utils/AppError';
 import { catchAsync } from '../utils/catchAsync';
+import { DEFAULT_FAQS } from '../utils/defaultData';
 
 export const getFAQs = catchAsync(async (req: Request, res: Response) => {
-  const { category } = req.query;
-  const filter: any = { published: true };
-  if (category && category !== 'ALL') {
-    filter.category = category;
+  try {
+    const { category } = req.query;
+    const filter: any = { published: true };
+    if (category && category !== 'ALL') {
+      filter.category = category;
+    }
+    const faqs = await FAQ.find(filter).sort({ displayOrder: 1, createdAt: 1 });
+    if (faqs && faqs.length > 0) {
+      return res.status(200).json({
+        status: 'success',
+        results: faqs.length,
+        data: { faqs },
+      });
+    }
+  } catch (error) {
+    console.warn('[FAQ Controller] DB fetch failed, serving default FAQs:', (error as Error).message);
   }
-  const faqs = await FAQ.find(filter).sort({ displayOrder: 1, createdAt: 1 });
+
   res.status(200).json({
     status: 'success',
-    results: faqs.length,
-    data: { faqs },
+    results: DEFAULT_FAQS.length,
+    data: { faqs: DEFAULT_FAQS },
   });
 });
 
 export const getAdminFAQs = catchAsync(async (_req: Request, res: Response) => {
-  const faqs = await FAQ.find().sort({ displayOrder: 1, createdAt: 1 });
+  try {
+    const faqs = await FAQ.find().sort({ displayOrder: 1, createdAt: 1 });
+    if (faqs && faqs.length > 0) {
+      return res.status(200).json({
+        status: 'success',
+        results: faqs.length,
+        data: { faqs },
+      });
+    }
+  } catch (error) {
+    console.warn('[Admin FAQ] DB fetch failed, serving default FAQs:', (error as Error).message);
+  }
+
   res.status(200).json({
     status: 'success',
-    results: faqs.length,
-    data: { faqs },
+    results: DEFAULT_FAQS.length,
+    data: { faqs: DEFAULT_FAQS },
   });
 });
 

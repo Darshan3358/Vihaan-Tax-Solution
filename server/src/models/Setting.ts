@@ -36,6 +36,10 @@ export interface ISetting extends Document {
     instagram: string;
     facebook: string;
   };
+  reviewSource?: 'live' | 'mock';
+  googlePlaceUrl?: string;
+  googleRating?: number;
+  googleReviewCount?: number;
   globalSeo: {
     metaTitle: string;
     metaDescription: string;
@@ -99,6 +103,13 @@ const settingSchema = new Schema<ISetting>(
       instagram: { type: String, default: '' },
       facebook: { type: String, default: '' },
     },
+    reviewSource: { type: String, enum: ['live', 'mock'], default: 'live' },
+    googlePlaceUrl: {
+      type: String,
+      default: 'https://www.google.com/search?q=vihaan-tax-solution+baroda',
+    },
+    googleRating: { type: Number, default: 5.0 },
+    googleReviewCount: { type: Number, default: 117 },
     globalSeo: {
       metaTitle: { type: String, default: 'Vihaan Tax Solutions | Tax Consultancy' },
       metaDescription: { type: String, default: 'Expert GST Registration, GST Returns, Accounting, Audit, Firm Registration, and ITR Filing services by Mr. Vilas Joshi.' },

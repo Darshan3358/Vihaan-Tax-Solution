@@ -45,6 +45,10 @@ const defaultSettings: ISetting = {
     instagram: '',
     facebook: '',
   },
+  reviewSource: 'live',
+  googlePlaceUrl: 'https://www.google.com/search?q=vihaan-tax-solution+baroda',
+  googleRating: 5.0,
+  googleReviewCount: 117,
   globalSeo: {
     metaTitle: 'Vihaan Tax Solutions | Tax Consultancy',
     metaDescription: 'Expert GST Registration, GST Returns, Accounting, Audit, Firm Registration, and ITR Filing services by Mr. Vilas Joshi.',

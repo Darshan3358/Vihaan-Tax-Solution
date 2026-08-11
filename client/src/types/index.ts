@@ -78,6 +78,9 @@ export interface ITestimonial {
   content: string;
   published: boolean;
   displayOrder: number;
+  isGoogleReview?: boolean;
+  googleReviewUrl?: string;
+  timeAgo?: string;
 }
 
 export interface IFAQ {
@@ -110,6 +113,10 @@ export interface ISetting {
   address: string;
   mapEmbedUrl: string;
   officeHours: string;
+  reviewSource?: 'live' | 'mock';
+  googlePlaceUrl?: string;
+  googleRating?: number;
+  googleReviewCount?: number;
   consultant: {
     name: string;
     designation: string;

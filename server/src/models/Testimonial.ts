@@ -9,6 +9,9 @@ export interface ITestimonial extends Document {
   content: string;
   published: boolean;
   displayOrder: number;
+  isGoogleReview: boolean;
+  googleReviewUrl?: string;
+  timeAgo?: string;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -23,6 +26,9 @@ const testimonialSchema = new Schema<ITestimonial>(
     content: { type: String, required: true },
     published: { type: Boolean, default: true },
     displayOrder: { type: Number, default: 0 },
+    isGoogleReview: { type: Boolean, default: false },
+    googleReviewUrl: { type: String, default: '' },
+    timeAgo: { type: String, default: '' },
   },
   { timestamps: true }
 );

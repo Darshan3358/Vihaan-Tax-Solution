@@ -601,6 +601,10 @@ var DEFAULT_SETTINGS = {
     instagram: "",
     facebook: ""
   },
+  reviewSource: "live",
+  googlePlaceUrl: "https://www.google.com/search?q=vihaan-tax-solution+baroda",
+  googleRating: 5,
+  googleReviewCount: 117,
   globalSeo: {
     metaTitle: "Vihaan Tax Solutions | Tax Consultancy Vadodara",
     metaDescription: "Expert GST Registration (\u20B92,500), ITR Filing (\u20B91,000), Accounting (\u20B91,500), Company Registration (\u20B915,000) by Mr. Vilas Joshi.",
@@ -652,6 +656,45 @@ var DEFAULT_FAQS = [
 ];
 var DEFAULT_TESTIMONIALS = [
   {
+    _id: "test-google-1",
+    name: "DARSHAN THANKI",
+    designation: "Verified Google Reviewer",
+    company: "3 reviews",
+    rating: 5,
+    content: "Clear communication, no hidden charges \u2013 just great service.",
+    published: true,
+    displayOrder: 1,
+    isGoogleReview: true,
+    timeAgo: "2 weeks ago",
+    googleReviewUrl: "https://www.google.com/search?q=vihaan-tax-solution+baroda"
+  },
+  {
+    _id: "test-google-2",
+    name: "Jagruti Rathod",
+    designation: "Local Guide",
+    company: "27 reviews \u2022 5 photos",
+    rating: 5,
+    content: "Highly Professional and Reliable Tax Consultant Service.",
+    published: true,
+    displayOrder: 2,
+    isGoogleReview: true,
+    timeAgo: "3 weeks ago",
+    googleReviewUrl: "https://www.google.com/search?q=vihaan-tax-solution+baroda"
+  },
+  {
+    _id: "test-google-3",
+    name: "Deepak Mehta",
+    designation: "Google Business Client",
+    company: "Individual Taxpayer",
+    rating: 5,
+    content: "Excellent response and services. Mr. Vilas Joshi reviewed my AIS statement line by line and ensured maximum eligible deductions under the law.",
+    published: true,
+    displayOrder: 3,
+    isGoogleReview: true,
+    timeAgo: "1 month ago",
+    googleReviewUrl: "https://www.google.com/search?q=vihaan-tax-solution+baroda"
+  },
+  {
     _id: "test-1",
     name: "Rajesh Patel",
     designation: "Managing Director",
@@ -659,7 +702,8 @@ var DEFAULT_TESTIMONIALS = [
     rating: 5,
     content: "Mr. Vilas Joshi and Vihaan Tax Solutions have managed our GST filings and accounting flawlessly for over 3 years. Their prompt advice saved us from unnecessary penalties and improved our ITC claims.",
     published: true,
-    displayOrder: 1
+    displayOrder: 4,
+    isGoogleReview: false
   },
   {
     _id: "test-2",
@@ -669,17 +713,8 @@ var DEFAULT_TESTIMONIALS = [
     rating: 5,
     content: "Registering our firm and setting up our accounting compliance was surprisingly smooth. Vihaan Tax Solutions guided us through every document required with absolute transparency.",
     published: true,
-    displayOrder: 2
-  },
-  {
-    _id: "test-3",
-    name: "Deepak Mehta",
-    designation: "Consultant",
-    company: "Individual Taxpayer",
-    rating: 5,
-    content: "Filing my Income Tax Return with capital gains was stress-free. Mr. Vilas Joshi reviewed my AIS statement line by line and ensured maximum eligible deductions under the law.",
-    published: true,
-    displayOrder: 3
+    displayOrder: 5,
+    isGoogleReview: false
   }
 ];
 
@@ -977,7 +1012,10 @@ var testimonialSchema = new import_mongoose4.Schema(
     rating: { type: Number, min: 1, max: 5, default: 5 },
     content: { type: String, required: true },
     published: { type: Boolean, default: true },
-    displayOrder: { type: Number, default: 0 }
+    displayOrder: { type: Number, default: 0 },
+    isGoogleReview: { type: Boolean, default: false },
+    googleReviewUrl: { type: String, default: "" },
+    timeAgo: { type: String, default: "" }
   },
   { timestamps: true }
 );
@@ -1370,6 +1408,13 @@ var settingSchema = new import_mongoose7.Schema(
       instagram: { type: String, default: "" },
       facebook: { type: String, default: "" }
     },
+    reviewSource: { type: String, enum: ["live", "mock"], default: "live" },
+    googlePlaceUrl: {
+      type: String,
+      default: "https://www.google.com/search?q=vihaan-tax-solution+baroda"
+    },
+    googleRating: { type: Number, default: 5 },
+    googleReviewCount: { type: Number, default: 117 },
     globalSeo: {
       metaTitle: { type: String, default: "Vihaan Tax Solutions | Tax Consultancy" },
       metaDescription: { type: String, default: "Expert GST Registration, GST Returns, Accounting, Audit, Firm Registration, and ITR Filing services by Mr. Vilas Joshi." },

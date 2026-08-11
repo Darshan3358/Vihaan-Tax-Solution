@@ -61,3 +61,18 @@
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
 }
+
+/* Input focus rings matching Vihaan brand teal */
+.input-brand-focus {
+  transition: all 0.2s ease-in-out;
+}
+.input-brand-focus:focus {
+  outline: none;
+  border-color: #0E9AA7 !important;
+  box-shadow: 0 0 0 3px #E6F7F9 !important;
+}
+
+/* Logo-inspired decorative gradient */
+.bg-brand-gradient {
+  background: linear-gradient(135deg, #0E9AA7 0%, #078795 55%, #F7941D 100%);
+}

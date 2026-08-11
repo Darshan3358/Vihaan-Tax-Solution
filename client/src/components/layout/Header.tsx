@@ -40,72 +40,74 @@ export const Header: React.FC = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-40 transition-all duration-300">
-      {/* Top Bar */}
-      <div className="bg-navy-950 text-slate-300 text-xs py-2 px-4 border-b border-navy-900 hidden sm:block">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="flex items-center gap-6">
-            <a href={`tel:${settings?.phone || '+917861096198'}`} className="flex items-center gap-1.5 hover:text-brand-gold transition">
-              <Phone className="w-3.5 h-3.5 text-brand-gold" />
-              <span>{settings?.phone || '+91 78610 96198'}</span>
-            </a>
-            <a href={`mailto:${settings?.email || 'Info.vihaantax@gmail.com'}`} className="flex items-center gap-1.5 hover:text-brand-gold transition">
-              <Mail className="w-3.5 h-3.5 text-brand-gold" />
-              <span>{settings?.email || 'Info.vihaantax@gmail.com'}</span>
-            </a>
-            <span className="hidden md:inline-flex items-center gap-1 text-slate-400">
-              <Award className="w-3.5 h-3.5 text-brand-gold" />
-              <span>Consultant: {settings?.consultant?.name || 'Mr. Vilas Joshi'}</span>
-            </span>
-          </div>
+      {/* Top Bar (Compact, auto-hides on scroll to conserve vertical height) */}
+      {!isScrolled && (
+        <div className="bg-navy-950/95 text-slate-300 text-[11px] py-1.5 px-4 border-b border-navy-900/60 hidden sm:block backdrop-blur-xs transition duration-300">
+          <div className="max-w-7xl mx-auto flex justify-between items-center">
+            <div className="flex items-center gap-5">
+              <a href={`tel:${settings?.phone || '+917861096198'}`} className="flex items-center gap-1.5 hover:text-brand-gold transition">
+                <Phone className="w-3 h-3 text-brand-gold" />
+                <span>{settings?.phone || '+91 78610 96198'}</span>
+              </a>
+              <a href={`mailto:${settings?.email || 'Info.vihaantax@gmail.com'}`} className="flex items-center gap-1.5 hover:text-brand-gold transition">
+                <Mail className="w-3 h-3 text-brand-gold" />
+                <span>{settings?.email || 'Info.vihaantax@gmail.com'}</span>
+              </a>
+              <span className="hidden md:inline-flex items-center gap-1 text-slate-400">
+                <Award className="w-3 h-3 text-brand-gold" />
+                <span>Consultant: {settings?.consultant?.name || 'Mr. Vilas Joshi'}</span>
+              </span>
+            </div>
 
-          <div className="flex items-center gap-4">
-            <span className="text-slate-400">{settings?.officeHours || 'Mon - Sat: 9:30 AM - 7:00 PM'}</span>
-            <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-emerald-400 font-medium hover:text-emerald-300 transition"
-            >
-              <MessageSquare className="w-3.5 h-3.5" />
-              <span>WhatsApp Us</span>
-            </a>
+            <div className="flex items-center gap-4">
+              <span className="text-slate-400">{settings?.officeHours || 'Mon - Sat: 9:30 AM - 7:00 PM'}</span>
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-emerald-400 font-semibold hover:text-emerald-300 transition"
+              >
+                <MessageSquare className="w-3 h-3" />
+                <span>WhatsApp Us</span>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
       {/* Main Navbar */}
       <nav
         className={`transition-all duration-300 ${
           isScrolled
-            ? 'glass-nav text-white shadow-xl py-3 border-b border-navy-800'
-            : 'bg-navy-900/90 text-white backdrop-blur-md py-4 border-b border-navy-800/50'
+            ? 'glass-nav text-white shadow-xl py-2.5 border-b border-navy-800'
+            : 'bg-navy-900/90 text-white backdrop-blur-md py-3.5 border-b border-navy-800/50'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-gold to-amber-600 flex items-center justify-center text-navy-950 font-black text-xl shadow-gold-glow group-hover:scale-105 transition">
+          <Link to="/" className="flex items-center gap-2.5 group">
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-brand-gold to-amber-500 flex items-center justify-center text-navy-950 font-black text-lg shadow-gold-glow group-hover:scale-105 transition">
               V
             </div>
             <div>
-              <span className="font-extrabold text-lg md:text-xl tracking-tight text-white block leading-none">
+              <span className="font-extrabold text-base sm:text-lg tracking-tight text-white block leading-none">
                 {settings?.companyName || 'Vihaan Tax Solutions'}
               </span>
-              <span className="text-[10px] uppercase tracking-widest text-brand-gold font-semibold block mt-1">
+              <span className="text-[9px] uppercase tracking-widest text-brand-gold font-semibold block mt-0.5">
                 CA & Tax Consultancy
               </span>
             </div>
           </Link>
 
           {/* Desktop Nav Items */}
-          <div className="hidden md:flex items-center gap-8 font-medium text-sm">
+          <div className="hidden md:flex items-center gap-7 font-medium text-sm">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.path}
-                className={`py-2 hover:text-brand-gold transition ${
+                className={`py-1 hover:text-brand-gold transition ${
                   (link.path === '/services' ? location.pathname.startsWith('/services') : location.pathname === link.path)
-                    ? 'text-brand-gold font-semibold'
+                    ? 'text-brand-gold font-bold border-b-2 border-brand-gold'
                     : 'text-slate-200'
                 }`}
               >
@@ -115,19 +117,19 @@ export const Header: React.FC = () => {
           </div>
 
           {/* Desktop CTA */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-3">
             <a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2.5 rounded-xl bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500/20 transition border border-emerald-500/30"
+              className="p-2 rounded-xl bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500/20 transition border border-emerald-500/30"
               title="Chat on WhatsApp"
             >
-              <MessageSquare className="w-5 h-5" />
+              <MessageSquare className="w-4 h-4" />
             </a>
             <Link
               to="/contact"
-              className="bg-gradient-to-r from-brand-gold to-amber-500 hover:from-amber-500 hover:to-brand-gold text-navy-950 font-bold px-5 py-2.5 rounded-xl shadow-gold-glow hover:shadow-lg transition transform hover:-translate-y-0.5 text-sm"
+              className="bg-gradient-to-r from-brand-gold via-amber-400 to-amber-500 hover:from-amber-500 hover:to-brand-gold text-navy-950 font-bold px-5 py-2.5 rounded-xl shadow-gold-glow hover:shadow-lg transition transform hover:-translate-y-0.5 text-xs sm:text-sm whitespace-nowrap shrink-0 active:scale-95"
             >
               Book Consultation
             </Link>
@@ -145,7 +147,7 @@ export const Header: React.FC = () => {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 top-[60px] bg-navy-950/95 backdrop-blur-xl z-40 p-6 flex flex-col justify-between overflow-y-auto">
+        <div className="md:hidden fixed inset-0 top-[56px] bg-navy-950/95 backdrop-blur-xl z-40 p-6 flex flex-col justify-between overflow-y-auto">
           <div className="space-y-6">
             <div className="space-y-2">
               <span className="text-xs uppercase tracking-widest text-slate-400 font-semibold block mb-2">
@@ -155,7 +157,7 @@ export const Header: React.FC = () => {
                 <Link
                   key={link.name}
                   to={link.path}
-                  className="block py-2.5 text-lg font-medium text-slate-100 hover:text-brand-gold transition border-b border-navy-800"
+                  className="block py-2.5 text-base font-medium text-slate-100 hover:text-brand-gold transition border-b border-navy-800"
                 >
                   {link.name}
                 </Link>
@@ -174,7 +176,7 @@ export const Header: React.FC = () => {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 w-full bg-emerald-600/20 text-emerald-400 border border-emerald-500/30 font-semibold py-2.5 rounded-xl"
+              className="flex items-center justify-center gap-2 w-full bg-emerald-600/20 text-emerald-400 border border-emerald-500/30 font-semibold py-2.5 rounded-xl text-sm"
             >
               <MessageSquare className="w-4 h-4" />
               <span>WhatsApp Consultant</span>

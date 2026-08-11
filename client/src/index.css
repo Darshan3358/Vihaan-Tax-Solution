@@ -5,8 +5,8 @@
 @layer base {
   html {
     font-family: 'Inter', 'Plus Jakarta Sans', system-ui, sans-serif;
-    color: #172033;
-    background-color: #F7F8FA;
+    color: #0A1D27;
+    background-color: #F5FAFB;
   }
 }
 
@@ -28,7 +28,7 @@
 
 /* Custom Glassmorphism utilities */
 .glass-nav {
-  background: rgba(11, 31, 51, 0.85);
+  background: rgba(10, 38, 51, 0.88);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
@@ -43,7 +43,7 @@
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(226, 232, 240, 0.8);
+  border: 1px solid rgba(224, 238, 241, 0.8);
 }
 
 /* Shimmer skeleton animation */
@@ -62,17 +62,17 @@
   animation: shimmer 1.5s infinite;
 }
 
-/* Input focus rings matching Vihaan brand teal */
+/* Input focus rings matching Vihaan brand cyan/teal */
 .input-brand-focus {
   transition: all 0.2s ease-in-out;
 }
 .input-brand-focus:focus {
   outline: none;
-  border-color: #0E9AA7 !important;
-  box-shadow: 0 0 0 3px #E6F7F9 !important;
+  border-color: #0293AC !important;
+  box-shadow: 0 0 0 3px #E7F8FA !important;
 }
 
 /* Logo-inspired decorative gradient */
 .bg-brand-gradient {
-  background: linear-gradient(135deg, #0E9AA7 0%, #078795 55%, #F7941D 100%);
+  background: linear-gradient(135deg, #0A2633 0%, #061923 100%);
 }

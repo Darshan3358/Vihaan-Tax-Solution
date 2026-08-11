@@ -89,7 +89,7 @@ export const Header: React.FC = () => {
             <img
               src="/images/logo.png"
               alt="Vihaan Tax Solution Logo"
-              className="h-10 sm:h-12 w-auto object-contain bg-white rounded-xl p-1 shadow-md group-hover:scale-105 transition duration-300"
+              className="h-10 sm:h-12 w-auto object-contain group-hover:scale-105 transition duration-300"
             />
             <div className="hidden xs:block">
               <span className="font-extrabold text-base sm:text-lg tracking-tight text-white block leading-none">

@@ -29,7 +29,7 @@ export const Footer: React.FC = () => {
               <img
                 src="/images/logo.png"
                 alt="Vihaan Tax Solution Logo"
-                className="h-12 w-auto object-contain bg-white rounded-xl p-1 shadow-md"
+                className="h-12 w-auto object-contain"
               />
               <div>
                 <span className="font-extrabold text-xl text-white block">

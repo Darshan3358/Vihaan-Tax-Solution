@@ -12,7 +12,7 @@
     "dev:server": "npm run dev --prefix server",
     "dev:client": "npm run dev --prefix client",
     "seed": "npm run seed --prefix server",
-    "build:api": "npx esbuild api/index.ts --bundle --platform=node --target=node18 --outfile=api/index.js --external:express --external:mongoose --external:bcryptjs --external:jsonwebtoken --external:cloudinary --external:multer --external:cors --external:helmet --external:express-rate-limit --external:zod --external:dotenv",
+    "build:api": "npx esbuild server/src/app.ts --bundle --platform=node --format=cjs --target=node18 --outfile=api/index.js",
     "build": "npm run build:api && cd server && npm run build && cd ../client && npm run build"
   },
   "dependencies": {

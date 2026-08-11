@@ -13,12 +13,19 @@ import faqRoutes from './routes/faqRoutes';
 import mediaRoutes from './routes/mediaRoutes';
 import settingRoutes from './routes/settingRoutes';
 import dashboardRoutes from './routes/dashboardRoutes';
+import { connectDB } from './config/db';
 import { globalErrorHandler } from './middleware/errorHandler';
 import { AppError } from './utils/AppError';
 
 dotenv.config();
 
 const app: Application = express();
+
+// Ensure Database Connection for serverless Vercel environment
+app.use(async (_req, _res, next) => {
+  await connectDB();
+  next();
+});
 
 // Security HTTP headers
 app.use(

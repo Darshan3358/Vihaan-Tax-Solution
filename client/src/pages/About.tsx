@@ -56,7 +56,7 @@ export const About: React.FC = () => {
 
               <p className="text-slate-600 leading-relaxed text-base">
                 {settings?.consultant?.bio ||
-                  'With over a decade of hands-on consultancy experience, Mr. Vilas Joshi has empowered hundreds of business owners, startups, and individual taxpayers with strategic tax planning, statutory GST compliance, meticulous accounting, and proactive financial oversight.'}
+                  'With 7+ years of hands-on consultancy experience, Mr. Vilas Joshi has empowered hundreds of business owners, startups, and individual taxpayers with strategic tax planning, statutory GST compliance, meticulous accounting, and proactive financial oversight.'}
               </p>
 
               <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200">

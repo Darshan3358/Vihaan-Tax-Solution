@@ -20,9 +20,9 @@ const defaultSettings: ISetting = {
   consultant: {
     name: 'Mr. Vilas Joshi',
     designation: 'Tax Consultant',
-    bio: 'With over a decade of hands-on consultancy experience, Mr. Vilas Joshi has empowered hundreds of business owners, startups, and individual taxpayers with strategic tax planning, statutory GST compliance, meticulous accounting, and proactive financial oversight.',
+    bio: 'With 7+ years of hands-on consultancy experience, Mr. Vilas Joshi has empowered hundreds of business owners, startups, and individual taxpayers with strategic tax planning, statutory GST compliance, meticulous accounting, and proactive financial oversight.',
     philosophy: 'Trusted. Confidential. Professional. Every financial decision deserves clarity, strategic depth, and total regulatory adherence.',
-    experienceYears: '10+',
+    experienceYears: '7+',
     image: '/images/vilas_joshi.png',
   },
   hero: {
@@ -34,7 +34,7 @@ const defaultSettings: ISetting = {
     heroImage: '/images/hero.png',
   },
   trustStats: [
-    { number: '10+', label: 'Years Experience', visible: true },
+    { number: '7+', label: 'Years Experience', visible: true },
     { number: '500+', label: 'Clients Assisted', visible: true },
     { number: '6+', label: 'Core Services', visible: true },
     { number: '100%', label: 'Confidentiality Focused', visible: true },

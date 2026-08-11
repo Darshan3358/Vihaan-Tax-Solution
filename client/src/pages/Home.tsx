@@ -184,7 +184,7 @@ export const Home: React.FC = () => {
               <motion.div variants={fadeInUp} className="pt-6 border-t border-navy-800/80 grid grid-cols-3 gap-4">
                 <div className="p-3 rounded-xl bg-navy-900/40 border border-navy-800/60 backdrop-blur-xs">
                   <span className="text-brand-gold font-black text-2xl block tracking-tight">
-                    {settings?.trustStats?.[0]?.number || '10+'}
+                    {settings?.trustStats?.[0]?.number || '7+'}
                   </span>
                   <span className="text-slate-400 text-xs font-medium">Years Experience</span>
                 </div>

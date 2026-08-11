@@ -85,11 +85,13 @@ export const Header: React.FC = () => {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2.5 group">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-brand-gold to-amber-500 flex items-center justify-center text-navy-950 font-black text-lg shadow-gold-glow group-hover:scale-105 transition">
-              V
-            </div>
-            <div>
+          <Link to="/" className="flex items-center gap-3 group">
+            <img
+              src="/images/logo.png"
+              alt="Vihaan Tax Solution Logo"
+              className="h-10 sm:h-12 w-auto object-contain bg-white rounded-xl p-1 shadow-md group-hover:scale-105 transition duration-300"
+            />
+            <div className="hidden xs:block">
               <span className="font-extrabold text-base sm:text-lg tracking-tight text-white block leading-none">
                 {settings?.companyName || 'Vihaan Tax Solutions'}
               </span>

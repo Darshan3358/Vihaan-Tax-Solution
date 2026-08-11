@@ -26,9 +26,11 @@ export const Footer: React.FC = () => {
           {/* Col 1: Brand Info */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-gold to-amber-600 flex items-center justify-center text-navy-950 font-black text-xl shadow-gold-glow">
-                V
-              </div>
+              <img
+                src="/images/logo.png"
+                alt="Vihaan Tax Solution Logo"
+                className="h-12 w-auto object-contain bg-white rounded-xl p-1 shadow-md"
+              />
               <div>
                 <span className="font-extrabold text-xl text-white block">
                   {settings?.companyName || 'Vihaan Tax Solutions'}

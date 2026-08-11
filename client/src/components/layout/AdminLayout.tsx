@@ -43,10 +43,8 @@ export const AdminLayout: React.FC = () => {
     <div className="min-h-screen bg-slate-100 flex flex-col md:flex-row">
       {/* Mobile Top Navbar */}
       <div className="md:hidden bg-navy-950 text-white p-4 flex justify-between items-center border-b border-navy-800">
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-brand-gold text-navy-950 flex items-center justify-center font-bold">
-            V
-          </div>
+        <div className="flex items-center gap-2.5">
+          <img src="/images/logo.png" alt="Vihaan Logo" className="w-8 h-8 object-contain" />
           <span className="font-bold text-sm">Vihaan Admin CMS</span>
         </div>
         <button
@@ -67,9 +65,7 @@ export const AdminLayout: React.FC = () => {
           {/* Header */}
           <div className="p-6 border-b border-navy-900">
             <Link to="/" className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-gold to-amber-600 flex items-center justify-center text-navy-950 font-black text-xl shadow-gold-glow">
-                V
-              </div>
+              <img src="/images/logo.png" alt="Vihaan Logo" className="w-9 h-9 object-contain" />
               <div>
                 <span className="font-extrabold text-base text-white block leading-none">Vihaan CMS</span>
                 <span className="text-[10px] uppercase tracking-widest text-brand-gold font-semibold block mt-1">

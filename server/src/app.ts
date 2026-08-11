@@ -25,10 +25,10 @@ const app: Application = express();
 app.use(async (_req, _res, next) => {
   try {
     await connectDB();
-    next();
   } catch (err) {
-    next(err);
+    console.warn('[Database Connection Warning]', err);
   }
+  next();
 });
 
 // Security HTTP headers

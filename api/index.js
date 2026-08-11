@@ -1470,6 +1470,7 @@ var dashboardRoutes_default = router8;
 
 // server/src/config/db.ts
 var import_mongoose8 = __toESM(require("mongoose"));
+import_mongoose8.default.set("bufferCommands", false);
 var connectDB = async () => {
   if (import_mongoose8.default.connection.readyState >= 1) {
     return;
@@ -1477,7 +1478,7 @@ var connectDB = async () => {
   try {
     const connStr = process.env.MONGODB_URI || "mongodb+srv://fanqie:fanqie123@cluster0.f8acy45.mongodb.net/tax";
     const conn = await import_mongoose8.default.connect(connStr, {
-      serverSelectionTimeoutMS: 5e3
+      serverSelectionTimeoutMS: 3e3
     });
     console.log(`[Database] MongoDB Atlas Connected: ${conn.connection.host}`);
   } catch (error) {

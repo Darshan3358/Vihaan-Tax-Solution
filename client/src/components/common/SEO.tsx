@@ -12,7 +12,7 @@ export const SEO: React.FC<SEOProps> = ({ title, description, keywords }) => {
 
   const siteTitle = title
     ? `${title} | ${settings?.companyName || 'Vihaan Tax Solutions'}`
-    : settings?.globalSeo?.metaTitle || 'Vihaan Tax Solutions | CA & Tax Consultancy';
+    : settings?.globalSeo?.metaTitle || 'Vihaan Tax Solutions | Tax Consultancy';
 
   const metaDesc =
     description ||

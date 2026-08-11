@@ -602,7 +602,7 @@ var DEFAULT_SETTINGS = {
     facebook: ""
   },
   globalSeo: {
-    metaTitle: "Vihaan Tax Solutions | CA & Tax Consultancy Vadodara",
+    metaTitle: "Vihaan Tax Solutions | Tax Consultancy Vadodara",
     metaDescription: "Expert GST Registration (\u20B92,500), ITR Filing (\u20B91,000), Accounting (\u20B91,500), Company Registration (\u20B915,000) by Mr. Vilas Joshi.",
     keywords: ["Tax Consultant Vadodara", "GST Registration Vadodara", "ITR Filing Vadodara", "Accounting Services"],
     ogImage: "/images/hero.png"
@@ -1371,7 +1371,7 @@ var settingSchema = new import_mongoose7.Schema(
       facebook: { type: String, default: "" }
     },
     globalSeo: {
-      metaTitle: { type: String, default: "Vihaan Tax Solutions | CA & Tax Consultancy" },
+      metaTitle: { type: String, default: "Vihaan Tax Solutions | Tax Consultancy" },
       metaDescription: { type: String, default: "Expert GST Registration, GST Returns, Accounting, Audit, Firm Registration, and ITR Filing services by Mr. Vilas Joshi." },
       keywords: [{ type: String }],
       ogImage: { type: String, default: "" }

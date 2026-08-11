@@ -96,7 +96,7 @@ export const Header: React.FC = () => {
                 {settings?.companyName || 'Vihaan Tax Solutions'}
               </span>
               <span className="text-[9px] uppercase tracking-widest text-brand-gold font-semibold block mt-0.5">
-                CA & Tax Consultancy
+                Tax Consultancy
               </span>
             </div>
           </Link>

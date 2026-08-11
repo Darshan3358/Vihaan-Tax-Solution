@@ -36,7 +36,7 @@ export const Footer: React.FC = () => {
                   {settings?.companyName || 'Vihaan Tax Solutions'}
                 </span>
                 <span className="text-[10px] uppercase tracking-widest text-brand-gold font-semibold block">
-                  CA & Tax Consultancy
+                  Tax Consultancy
                 </span>
               </div>
             </Link>

@@ -46,7 +46,7 @@ const defaultSettings: ISetting = {
     facebook: '',
   },
   globalSeo: {
-    metaTitle: 'Vihaan Tax Solutions | CA & Tax Consultancy',
+    metaTitle: 'Vihaan Tax Solutions | Tax Consultancy',
     metaDescription: 'Expert GST Registration, GST Returns, Accounting, Audit, Firm Registration, and ITR Filing services by Mr. Vilas Joshi.',
     keywords: ['Tax Consultant', 'GST Registration', 'ITR Filing', 'Accounting Services'],
     ogImage: '/images/hero.png',

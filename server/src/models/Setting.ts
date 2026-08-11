@@ -100,7 +100,7 @@ const settingSchema = new Schema<ISetting>(
       facebook: { type: String, default: '' },
     },
     globalSeo: {
-      metaTitle: { type: String, default: 'Vihaan Tax Solutions | CA & Tax Consultancy' },
+      metaTitle: { type: String, default: 'Vihaan Tax Solutions | Tax Consultancy' },
       metaDescription: { type: String, default: 'Expert GST Registration, GST Returns, Accounting, Audit, Firm Registration, and ITR Filing services by Mr. Vilas Joshi.' },
       keywords: [{ type: String }],
       ogImage: { type: String, default: '' },

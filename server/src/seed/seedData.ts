@@ -415,7 +415,7 @@ const seedDatabase = async () => {
         facebook: '',
       },
       globalSeo: {
-        metaTitle: 'Vihaan Tax Solutions | CA & Tax Consultancy Vadodara',
+        metaTitle: 'Vihaan Tax Solutions | Tax Consultancy Vadodara',
         metaDescription: 'Expert GST Registration (₹2,500), ITR Filing (₹1,000), Accounting (₹1,500), Company Registration (₹15,000) by Mr. Vilas Joshi.',
         keywords: ['Tax Consultant Vadodara', 'GST Registration Vadodara', 'ITR Filing Vadodara', 'Accounting Services'],
         ogImage: '/images/hero.png',

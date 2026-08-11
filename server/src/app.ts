@@ -21,6 +21,9 @@ dotenv.config();
 
 const app: Application = express();
 
+// Enable trust proxy for Vercel reverse proxy
+app.set('trust proxy', 1);
+
 // Ensure Database Connection for serverless Vercel environment
 app.use(async (_req, _res, next) => {
   try {
@@ -49,8 +52,8 @@ app.use(
 // Rate limiting for public lead submission & auth
 const apiLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
-  max: 200,
-  message: 'Too many requests from this IP, please try again after 15 minutes.',
+  max: 500,
+  validate: { trustProxy: false, xForwardedForHeader: false },
 });
 app.use('/api', apiLimiter);
 

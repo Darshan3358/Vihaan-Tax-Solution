@@ -91,11 +91,6 @@ export const AdminLogin: React.FC = () => {
             </button>
           </form>
 
-          <div className="p-3 rounded-xl bg-navy-950 border border-navy-800 text-[11px] text-slate-400 text-center space-y-1">
-            <span className="font-semibold text-brand-gold block">Default Credentials (Seed Account):</span>
-            <p>Email: admin@vihaantax.com</p>
-            <p>Password: Admin@123456</p>
-          </div>
         </div>
       </div>
     </>

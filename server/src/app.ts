@@ -23,8 +23,12 @@ const app: Application = express();
 
 // Ensure Database Connection for serverless Vercel environment
 app.use(async (_req, _res, next) => {
-  await connectDB();
-  next();
+  try {
+    await connectDB();
+    next();
+  } catch (err) {
+    next(err);
+  }
 });
 
 // Security HTTP headers
@@ -58,19 +62,19 @@ app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 app.use('/uploads', express.static(path.join(process.cwd(), 'uploads')));
 
 // Health check endpoint
-app.get('/api/v1/health', (_req: Request, res: Response) => {
+app.get(['/api/v1/health', '/v1/health'], (_req: Request, res: Response) => {
   res.status(200).json({ status: 'ok', message: 'Vihaan Tax Solutions API is operational' });
 });
 
 // API Routes
-app.use('/api/v1/auth', authRoutes);
-app.use('/api/v1/services', serviceRoutes);
-app.use('/api/v1/leads', leadRoutes);
-app.use('/api/v1/testimonials', testimonialRoutes);
-app.use('/api/v1/faqs', faqRoutes);
-app.use('/api/v1/media', mediaRoutes);
-app.use('/api/v1/settings', settingRoutes);
-app.use('/api/v1/dashboard', dashboardRoutes);
+app.use(['/api/v1/auth', '/v1/auth', '/auth'], authRoutes);
+app.use(['/api/v1/services', '/v1/services', '/services'], serviceRoutes);
+app.use(['/api/v1/leads', '/v1/leads', '/leads'], leadRoutes);
+app.use(['/api/v1/testimonials', '/v1/testimonials', '/testimonials'], testimonialRoutes);
+app.use(['/api/v1/faqs', '/v1/faqs', '/faqs'], faqRoutes);
+app.use(['/api/v1/media', '/v1/media', '/media'], mediaRoutes);
+app.use(['/api/v1/settings', '/v1/settings', '/settings'], settingRoutes);
+app.use(['/api/v1/dashboard', '/v1/dashboard', '/dashboard'], dashboardRoutes);
 
 // Handle unhandled routes
 app.all('*', (req: Request, _res: Response, next) => {

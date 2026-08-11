@@ -285,7 +285,7 @@ export const Home: React.FC = () => {
                 <img
                   src={settings?.consultant?.image || '/images/vilas_joshi.png'}
                   alt={settings?.consultant?.name || 'Mr. Vilas Joshi'}
-                  className="w-full h-[420px] object-cover"
+                  className="w-full h-[420px] object-cover object-top"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent" />
                 <div className="absolute bottom-5 left-5 right-5 text-white">
@@ -480,7 +480,7 @@ export const Home: React.FC = () => {
                 <img
                   src={settings?.consultant?.image || '/images/vilas_joshi.png'}
                   alt={settings?.consultant?.name || 'Mr. Vilas Joshi'}
-                  className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover mx-auto lg:mx-0 border-4 border-brand-gold shadow-md"
+                  className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover object-top mx-auto lg:mx-0 border-4 border-brand-gold shadow-md"
                 />
                 <h3 className="text-xl font-extrabold text-navy-900 mt-4">
                   {settings?.consultant?.name || 'Mr. Vilas Joshi'}

@@ -34,7 +34,7 @@ export const About: React.FC = () => {
                 <img
                   src={settings?.consultant?.image || '/images/vilas_joshi.png'}
                   alt={settings?.consultant?.name || 'Mr. Vilas Joshi'}
-                  className="w-full h-[500px] object-cover"
+                  className="w-full h-[500px] object-cover object-top"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6 text-white">
